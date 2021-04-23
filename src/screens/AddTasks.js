@@ -71,7 +71,6 @@ export default class AddTask extends Component {
     }
 
     render() {
-        if (this.state.fontsLoaded) {
             return (
                 <Modal transparent={true} visible={this.props.isVisible}
                     onRequestClose={this.props.onCancel}
@@ -103,9 +102,6 @@ export default class AddTask extends Component {
                     </TouchableWithoutFeedback>
                 </Modal>
             )
-        }else{
-            return <AppLoading/>
-        }
     }
 }
 
