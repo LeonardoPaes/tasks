@@ -12,9 +12,6 @@ import commonStyles from '../commonStyles';
 
 
 export default props => {
-    let [fontsLoaded] = useFonts({
-        'Lato': require('../../assets/fonts/Lato.ttf'),
-    });
 
     const doneOrNotStyle = props.doneAt != null ? 
         {textDecorationLine: 'line-through'} : {}
@@ -40,9 +37,6 @@ export default props => {
         )
     }
 
-    if (!fontsLoaded) {
-        return <AppLoading />;
-    } else {
         return(
             <Swipeable renderRightActions={getRightContent} renderLeftActions={getLeftContent}
                 onSwipeableLeftOpen={() => props.onDelete && props.onDelete(props.id)}>
@@ -60,7 +54,6 @@ export default props => {
                 </View>
             </Swipeable>
         )
-    }
 }
 
 function getCheckView(doneAt) {
